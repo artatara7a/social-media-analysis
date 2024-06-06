@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>social-media-analysis-ara</title>
+
+    <style>
+        .hidden { display: none; }
+        body, html {
+            margin: 10px;
+            padding: 0;
+            height: 100%;
+            position: relative;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 75px;
+        }
+        .image-wrapper {
+            max-width: 100%;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+        }
+        h1{
+            text-align: center;
+        }
+        .link {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0; 
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.5); 
+            text-align: center;
+            padding: 1px 0; 
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1); 
+            box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+        .caption {
+            max-width: 50%;
+            text-align: justify;
+            padding-left: 10px;
+        }
+        .divv {
+            padding-top: 50px;
+            text-align: justify;
+        }
+    </style>
+
+    <script>
+        function updateGraph() {
+            var dropdown = document.getElementById("platform-dropdown");
+            var selectedValue = dropdown.value;
+            var graphs = document.getElementsByClassName("graph");
+
+            for (var i = 0; i < graphs.length; i++) {
+                graphs[i].classList.add("hidden");
+            }
+
+            document.getElementById(selectedValue).classList.remove("hidden");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Analisis Sosial Media</h1>
+
+    <p style="text-align: center; padding-bottom: 75px;">Halaman ini berisi tampilan grafik yang dihasilkan dari baris kode yang dapat dilihat pada
+        <a href="https://github.com/ImtiyasAzzahra/social-media-analysis/blob/master/social-media-analysis-ara.ipynb" 
+        class="link" target="_blank">halaman berikut</a>, enjoy!
+    </p>
+    
+    <div class="container">        
+        <div class="image-wrapper">
+          <img class="image" src="g_1.png" alt="Gambar" />          
+        </div>
+        <div class="caption">
+            <p>Grafik disamping menjelaskan distribusi penggunaan platform sebagai media sosial. 
+                Terlihat bahwa Instagram menjadi platform favorit untuk saat ini.</p>
+        </div>
+    </div>
+
+    <p class="divv" style="padding-left: 10px;">Berikut merupakan grafik yang menjelaskan perkembangan user selama 6 bulan terakhir.
+        Dimana, user tersebut adalah yang telah melakukan postingan lebih dari 1 kali.</p>
+    <iframe src="g_2.html" width="100%" height="600px" frameborder="0"></iframe>
+
+    <p class="divv" style="padding-left: 10px; padding-bottom: 7px;">Bentuk lain dari grafik perkembangan user selama 6 bulan terakhir sebelumnya dapat dilihat pada grafik berikut.</p>
+    <div>        
+        <div class="image-wrapper">
+          <img class="image" src="g_3.png" alt="Gambar" />          
+        </div>
+    </div>
+
+    <div class="container">        
+        <div class="image-wrapper">
+          <img class="image" src="g_4.png" alt="Gambar" />          
+        </div>
+        <div class="caption">
+            <p>Grafik disamping menjelaskan banyaknya jumlah postingan (frekuensi)
+                yang terjadi dalam sehari pada setiap platform media sosial.</p>
+        </div>
+    </div>
+
+    <div class="container">        
+        <div class="image-wrapper">
+          <img class="image" src="g_5.png" alt="Gambar" />          
+        </div>
+        <div class="caption">
+            <p>Grafik disamping menjelaskan banyaknya jumlah postingan (frekuensi)
+                yang terjadi dalam sehari, dengan range interval waktu per-4 jam disetiap platform media sosial.</p>
+        </div>
+    </div>
+
+    <p class="divv" style="padding-left: 10px;">Grafik berikut menjelaskan frekuensi interaksi (likes, comments, dan share)
+        yang ada pada setiap postingan dalam sehari dari grafik sebelumnya, dengan range interval waktu per-4 jam disetiap platform media sosial.</p>
+    <select id="platform-dropdown" onchange="updateGraph()" style="width: 100%; height: 5%;">
+        <option value="instagram">instagram</option>
+        <option value="facebook">facebook</option>
+        <option value="twitter">twitter</option>
+    </select>
+    <div>
+        <iframe id="instagram" class="graph" src="instagram.html" width="100%" height="500" frameborder="0"></iframe>
+        <iframe id="facebook" class="graph hidden" src="facebook.html" width="100%" height="500" frameborder="0"></iframe>
+        <iframe id="twitter" class="graph hidden" src="twitter.html" width="100%" height="500"frameborder="0"></iframe>
+    </div>
+
+    <p class="divv" style="padding-left: 10px;">Berikut merupakan grafik yang menjelaskan korelasi panjang teks dari setiap postingan
+        dengan jumlah interaksi (likes, comments, dan share) disetiap platform media sosial.</p>
+    <iframe src="g_7.html" width="100%" height="600px" frameborder="0"></iframe>
+
+    <p class="divv" style="padding-left: 10px;">Grafik berikut menjelaskan banyaknya jumlah korelasi panjang teks (frekuensi) 
+        pada postingan disetiap platform media sosial.</p>
+        <img class="image" src="g_8.png" alt="Gambar" style="padding-bottom: 65px;"/>
+        
+    <div class="footer">
+        <p>©2024 Ara
+            <br>Analisis Sosial Media</p>
+    </div>
+</body>
+</html>
