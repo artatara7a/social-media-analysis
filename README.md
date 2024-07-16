@@ -1,4 +1,4 @@
-<h1 align="center">Covid-19 Indonesia Data Analysis</h1>
+<h1 align="center">Social Media Analysis</h1>
 <p align="center"  style="font-size: 25px">🌐🌐🌐🌐🌐</p>
 
 ## 🧰 Tools
